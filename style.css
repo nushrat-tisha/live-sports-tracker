@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.header nav a:hover {
+    color: #2563eb;
+}
+
+#themeBtn {
+    border: none;
+    background: #f1f5f9;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    background: #172554;
+    color: white;
+    padding: 55px 6%;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #cbd5e1;
+    font-size: 17px;
+}
+
+
+/* ================= CONTROLS ================= */
+
+.controls {
+    width: 88%;
+    margin: 30px auto;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.controls input,
+.controls select {
+    padding: 13px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    font-size: 15px;
+}
+
+.controls input {
+    flex: 1;
+    min-width: 220px;
+}
+
+.controls button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.controls button:hover {
+    background: #1d4ed8;
+}
+
+#updateMessage {
+    width: 88%;
+    margin: 0 auto 20px;
+    color: #64748b;
+}
+
+
+/* ================= SECTION ================= */
+
+.section {
+    width: 88%;
+    margin: 45px auto;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    font-size: 25px;
+}
+
+
+/* ================= MATCH GRID ================= */
+
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(320px, 1fr)
+    );
+    gap: 20px;
+}
+
+
+/* ================= MATCH CARD ================= */
+
+.match-card {
+    background: white;
+    border-radius: 14px;
+    padding: 22px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.match-card:hover {
+    transform: translateY(-3px);
+    transition: 0.2s;
+}
+
+.league-name {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.match-status {
+    color: #dc2626;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.team {
+    width: 110px;
+}
+
+.team img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.team h3 {
+    font-size: 16px;
+}
+
+.score {
+    text-align: center;
+}
+
+.score h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.score p {
+    font-size: 13px;
+    color: #dc2626;
+}
+
+
+/* ================= STANDINGS ================= */
+
+#standingsContainer {
+    background: white;
+    border-radius: 14px;
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background: #172554;
+    color: white;
+}
+
+tr:hover {
+    background: #f8fafc;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    text-align: center;
+    background: #172554;
+    color: #cbd5e1;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 0 20px;
+    }
+
+    .header nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .controls,
+    .section,
+    #updateMessage {
+        width: 92%;
+    }
+
+    .match-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ================= MATCH DETAILS MODAL ================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    border: none;
+    background: #f1f5f9;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-btn:hover {
+    background: #e2e8f0;
+}
+
+.details-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.details-header h2 {
+    margin-bottom: 8px;
+}
+
+.details-teams {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.details-team img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.details-team h3 {
+    margin-top: 10px;
+}
+
+.details-score {
+    text-align: center;
+}
+
+.details-score h1 {
+    font-size: 38px;
+}
+
+.details-status {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.events-title {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.event {
+    padding: 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.event-goal {
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .details-team img {
+        width: 55px;
+        height: 55px;
+    }
+
+}
+#standingsLeague {
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+/* ================= DARK MODE ================= */
+
+body.dark {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark .header {
+    background: #1e293b;
+    border-bottom-color: #334155;
+}
+
+body.dark .header nav a {
+    color: #cbd5e1;
+}
+
+body.dark .hero {
+    background: #020617;
+}
+
+body.dark .controls input,
+body.dark .controls select,
+body.dark #standingsLeague {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-color: #475569;
+}
+
+body.dark .match-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark .modal-content {
+    background: #1e293b;
+}
+
+body.dark .close-btn {
+    background: #334155;
+    color: white;
+}
+
+body.dark #standingsContainer {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark tr:hover {
+    background: #334155;
+}
+
+body.dark th,
+body.dark td {
+    border-bottom-color: #334155;
+}
+
+body.dark footer {
+    background: #020617;
+}
+/* ================= LOADING & ERROR ================= */
+
+.loading {
+    text-align: center;
+    padding: 30px;
+    color: #64748b;
+    font-size: 16px;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.empty-message {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    color: #64748b;
+    border: 1px solid #e5e7eb;
+}
+
+body.dark .empty-message {
+    background: #1e293b;
+    border-color: #334155;
+    color: #cbd5e1;
+}

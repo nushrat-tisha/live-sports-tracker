@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LiveScore | Football Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="logo">
+            ⚽ LiveScore
+        </div>
+
+        <nav>
+
+            <a href="#live">Live</a>
+            <a href="#today">Today</a>
+            <a href="#tomorrow">Tomorrow</a>
+            <a href="#standings">Standings</a>
+
+        </nav>
+
+        <button id="themeBtn">
+            🌙
+        </button>
+
+    </header>
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div>
+
+            <h1>
+                Live Football Scores
+            </h1>
+
+            <p>
+                Real-time scores, fixtures and football updates.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Controls -->
+
+    <section class="controls">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎 Search team..."
+        >
+
+
+        <select id="leagueFilter">
+
+            <option value="all">
+                All Leagues
+            </option>
+
+            <option value="39">
+                Premier League
+            </option>
+
+            <option value="140">
+                La Liga
+            </option>
+
+            <option value="135">
+                Serie A
+            </option>
+
+            <option value="78">
+                Bundesliga
+            </option>
+
+            <option value="61">
+                Ligue 1
+            </option>
+
+        </select>
+
+
+        <button id="refreshBtn">
+            🔄 Refresh
+        </button>
+
+    </section>
+
+
+    <p id="updateMessage"></p>
+
+
+    <!-- Live Matches -->
+
+    <section id="live" class="section">
+
+        <div class="section-title">
+
+            <h2>
+                🔴 Live Now
+            </h2>
+
+        </div>
+
+
+        <div
+            id="liveContainer"
+            class="match-grid">
+        </div>
+
+    </section>
+
+
+    <!-- Today -->
+
+    <section id="today" class="section">
+
+        <div class="section-title">
+
+            <h2>
+                📅 Today's Matches
+            </h2>
+
+        </div>
+
+
+        <div
+            id="todayContainer"
+            class="match-grid">
+        </div>
+
+    </section>
+
+
+    <!-- Tomorrow -->
+
+    <section id="tomorrow" class="section">
+
+        <div class="section-title">
+
+            <h2>
+                📅 Tomorrow's Matches
+            </h2>
+
+        </div>
+
+
+        <div
+            id="tomorrowContainer"
+            class="match-grid">
+        </div>
+
+    </section>
+
+
+    <!-- Standings -->
+
+    <section id="standings" class="section">
+
+    <div class="section-title">
+
+        <h2>
+            🏆 League Standings
+        </h2>
+
+        <select id="standingsLeague">
+
+            <option value="39">
+                Premier League
+            </option>
+
+            <option value="140">
+                La Liga
+            </option>
+
+            <option value="135">
+                Serie A
+            </option>
+
+            <option value="78">
+                Bundesliga
+            </option>
+
+            <option value="61">
+                Ligue 1
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div id="standingsContainer">
+
+        <p>
+            Loading standings...
+        </p>
+
+    </div>
+
+</section>
+
+
+    <!-- Footer -->
+
+    <footer>
+    <p>
+        © 2026 LiveScore • Real-time Football Tracker
+    </p>
+</footer>
+
+<!-- Match Details Modal -->
+
+<div id="matchModal" class="modal">
+
+    <div class="modal-content">
+
+        <button id="closeModal" class="close-btn">
+            ✕
+        </button>
+
+        <div id="matchDetails"></div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
